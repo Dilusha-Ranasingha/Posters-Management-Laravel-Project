@@ -1,23 +1,48 @@
+# Laravel & PHP-specific ignores
 /.phpunit.cache
+/.phpunit.result.cache
+/bootstrap/cache/*
+/storage/*.key
+/storage/pail
+/storage/logs/
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+storage/debugbar/
+
+# Node.js dependencies
 /node_modules
+/npm-debug.log
+/yarn-error.log
+
+# Build & compiled files
 /public/build
 /public/hot
 /public/storage
-/storage/*.key
-/storage/pail
+
+# Composer dependencies
 /vendor
+/composer.lock
+/auth.json
+
+# Environment variables
 .env
 .env.backup
 .env.production
-.phpactor.json
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-/auth.json
-/.fleet
+
+# IDE & editor files
 /.idea
-/.nova
 /.vscode
+/.nova
+/.fleet
 /.zed
+/.phpactor.json
+
+# Homestead & Laravel Sail (if using)
+/Homestead.json
+/Homestead.yaml
+/docker-compose.yml
+
+# MacOS & Windows system files
+.DS_Store
+Thumbs.db
