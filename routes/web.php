@@ -11,4 +11,6 @@ Route::post('/register', [UserController::class, 'register']);
 
 Route::Post('/logout', [UserController::class, 'logout']);
 
+Route::Post('/login', [UserController::class, 'login']);
+
 

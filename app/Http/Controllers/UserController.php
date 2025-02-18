@@ -26,5 +26,18 @@ class UserController extends Controller
         auth()->logout(); //auth->logout() is a function that laravel already provided to logout the user
         return redirect('/');   //redirect() is a function that laravel already provided to redirect the user to the specified page
     }
+
+    public function login(Request $request) {
+        $incommingFileds = $request->validate([
+            'loginname' => ['required'],   //required|email is make sure the email is in the correct format
+            'loginpassword' => ['required'],     //required is make sure the password is not empty
+        ]);
+
+        if( auth()->attempt( ['name' => $incommingFileds['loginname'], 'password' => $incommingFileds['loginpassword']]) ) { //auth()->attempt() is a function that laravel already provided to check the user login credentials
+            $request->session()->regenerate();   //session()->regenerate() is a function that laravel already provided to regenerate the session
+        }
+
+        return redirect('/'); 
+    }
 }
  

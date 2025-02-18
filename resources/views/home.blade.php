@@ -27,6 +27,17 @@
         </form>
     </div>
 
+    <!--Login form-->
+    <div style="text-align: center; border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto; margin-top: 100px;">
+        <h1>Login form</h1>
+        <form action="/login" method="POST">
+            @csrf                    <!-- It protects your form from CSRF attacks by ensuring the request is from your site. -->
+            <input type="text" name="loginname" placeholder="Name"><br>
+            <input type="password" name="loginpassword" placeholder="Password"><br>
+            <button>Login</button>
+        </form>
+    </div>
+
 
     @endauth       <!--End of the auth check-->
     
