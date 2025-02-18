@@ -21,5 +21,10 @@ class UserController extends Controller
 
         return redirect('/');   //redirect() is a function that laravel already provided to redirect the user to the specified page
     }
+
+    public function logout() {
+        auth()->logout(); //auth->logout() is a function that laravel already provided to logout the user
+        return redirect('/');   //redirect() is a function that laravel already provided to redirect the user to the specified page
+    }
 }
  
