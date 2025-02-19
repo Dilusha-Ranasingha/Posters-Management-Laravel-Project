@@ -7,7 +7,7 @@
 <body>
     <!--@auth, @else, and @endauth are called Blade directives in Laravel-->
     @auth        <!--hecks if a user is logged in. If the user is authenticated-->
-    
+
     <h2>congrags you are succsessfully logged!</h2>
     <form action="/logout" method="POST">
         @csrf
@@ -23,6 +23,17 @@
             <textarea name="body" placeholder="Enter Body Content"></textarea><br>
             <button>Create Post</button>
         </form>
+    </div>
+
+    <!-- Displaying all posts from the post table database -->
+    <div style="text-align: center; border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto; margin-top: 100px;">
+        <h2>All Posts</h2>
+        @foreach($posts as $post)
+            <div style="border: 1px solid #000; padding: 20px; margin: 10px 0;">
+                <h3>{{$post['title']}}</h3>
+                <p>{{$post['body']}}</p>
+            </div>
+        @endforeach
     </div>
 
 

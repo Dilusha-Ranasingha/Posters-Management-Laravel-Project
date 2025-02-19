@@ -45,4 +45,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    // Defines a one-to-many relationship between User and Post
+    // This means one user can create multiple posts
+    // 'user_id' is the foreign key in the posts table linking posts to a specific user
+    public function userCoolPosts() {
+        return $this->hasMany(Post::class, 'user_id');
+    }
 }
