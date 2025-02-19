@@ -6,8 +6,8 @@ use App\Http\Controllers\PostController;
 use App\Models\Post;
 
 Route::get('/', function () {
-    $posts = Post::all();       //this is use to get the post data from the database
-    return view('home', ['posts' => $posts]);     //this is use to return the view and also pass the post data to the view
+    $posts = Post::all();       // Retrieve all posts from the 'posts' table using the Post model
+    return view('home', ['posts' => $posts]);     // Pass the retrieved posts data to the 'home' view for display in the home.blade.php file by using the $posts variable
 });
 
 //User related routes
