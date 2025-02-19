@@ -15,6 +15,7 @@
     </form>
 
 
+    <!--create post form-->
     <div style="text-align: center; border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto; margin-top: 100px;">
         <h2>Create a New Post</h2>
         <form action="/create-post" method="POST">
@@ -32,6 +33,8 @@
             <div style="border: 1px solid #000; padding: 20px; margin: 10px 0;">
                 <h3>{{$post['title']}}</h3>
                 <p>{{$post['body']}}</p>
+                <h4>Posted by: {{$post['user_id']}}</h4>
+                <h4>Posted by: {{$post->user->name}}</h4>
             </div>
         @endforeach
     </div>
