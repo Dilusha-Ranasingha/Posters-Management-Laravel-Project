@@ -27,12 +27,22 @@ class PostController extends Controller
     }
 
     public function showEditPost(Post $post){
+        if(auth()->user()->id !== $post['user_id']){         //if user not logged in to the system then redirect to the home page
+            return redirect('/');
+        }
+
         return view('edit-post', ['post' => $post]);
     }
 
-    
+    // public function updateEditPost(Post $post, Request $request){
+        
+    // }
 
     public function showEditallposts(Post $allposts){
+        if(auth()->user()->id !== $post['user_id']){
+            return redirect('/');
+        }
+
         return view('edit-allpost', ['allposts' => $allposts]);
     }
 }

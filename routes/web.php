@@ -22,7 +22,10 @@ Route::Post('/login', [UserController::class, 'login']);
 
 //posters related routes
 Route::post('/create-post', [PostController::class, 'createPost']);
+
 Route::get('/edit-post/{post}', [PostController::class, 'showEditPost']);
+Route::put('/edit-post/{post}', [PostController::class, 'updateEditPost']);
+
 Route::get('/edit-post/{allposts}', [PostController::class, 'showEditallposts']);
 
 
