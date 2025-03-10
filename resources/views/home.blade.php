@@ -28,9 +28,9 @@
 
     <!-- Displaying all posts from the post table database -->
     <div style="text-align: center; border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto; margin-top: 100px;">
-        <h2>All Posts</h2>
+        <h2>My Posts</h2>
         <!-- Loop each post and display its details -->
-        @foreach($posts as $post)         <!--get the $posts variable from the controller and get as $post and loop through it-->       
+        @foreach($poster as $post)         <!--get the $poster variable from the controller and get as $post and loop through it-->       
             <div style="border: 1px solid #000; padding: 20px; margin: 10px 0;">
                 <h3>{{$post['title']}}</h3>
                 <p>{{$post['body']}}</p>

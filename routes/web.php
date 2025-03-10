@@ -6,8 +6,13 @@ use App\Http\Controllers\PostController;
 use App\Models\Post;
 
 Route::get('/', function () {
-    $posts = Post::all();       // Retrieve all posts from the 'posts' table using the Post model
-    return view('home', ['posts' => $posts]);     // Pass the retrieved posts data to the 'home' view for display in the home.blade.php file by using the $posts variable
+    $poster = Post::where('user_id', auth()->id())->get();     // Retrieve only posts created by the logged-in user
+    return view('home', ['poster' => $poster]);          // Pass the retrieved posts data to the 'home' view for display in the home.blade.php file by using the $posts variable
+});
+
+Route::get('/posts', function () {
+    $posts = Post::all();             // Retrieve all posts from the 'posts' table using the Post model
+    return view('posters', ['posts' => $posts]);          // Pass the retrieved posts data to the 'posts' view for display in the posts.blade.php file by using the $posts variable
 });
 
 //User related routes
