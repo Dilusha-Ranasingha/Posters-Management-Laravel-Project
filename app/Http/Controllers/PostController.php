@@ -34,15 +34,22 @@ class PostController extends Controller
         return view('edit-post', ['post' => $post]);
     }
 
-    // public function updateEditPost(Post $post, Request $request){
-        
-    // }
-
-    public function showEditallposts(Post $allposts){
-        if(auth()->user()->id !== $post['user_id']){
+    public function updateEditPost(Post $post, Request $request){
+        if(auth()->user()->id !== $post['user_id']){         //if user not logged in to the system then redirect to the home page
             return redirect('/');
         }
 
-        return view('edit-allpost', ['allposts' => $allposts]);
+        $incommingFileds = $request->validate([
+            'title' => 'required', 
+            'body' => 'required',
+        ]);
+
+        $incommingFileds['title'] = strip_tags($incommingFileds['title']);
+        $incommingFileds['body'] = strip_tags($incommingFileds['body']);
+
+        $post->update($incommingFileds);
+        return redirect('/');
     }
+
+    
 }

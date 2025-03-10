@@ -17,12 +17,6 @@
                 <p>{{$allposts['body']}}</p>
                 <h4>Author Id: {{$allposts['user_id']}}</h4>
                 <h4>Posted by: {{$allposts->user->name}}</h4>
-                <p><a href="/edit-post/{{$allposts->id}}">Edit</a></p>
-                <form action="/delete-post/{{$allposts->id}}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button>Delete</button>
-                </form>
             </div>
         @endforeach
     </div>
