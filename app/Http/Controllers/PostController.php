@@ -25,4 +25,14 @@ class PostController extends Controller
 
 
     }
+
+    public function showEditPost(Post $post){
+        return view('edit-post', ['post' => $post]);
+    }
+
+    
+
+    public function showEditallposts(Post $allposts){
+        return view('edit-allpost', ['allposts' => $allposts]);
+    }
 }

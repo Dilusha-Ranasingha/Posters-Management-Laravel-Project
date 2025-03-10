@@ -26,7 +26,7 @@
         </form>
     </div>
 
-    <!-- Displaying all posts from the post table database -->
+    <!-- Displaying auth user posts from the post table database -->
     <div style="text-align: center; border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto; margin-top: 100px;">
         <h2>My Posts</h2>
         <!-- Loop each post and display its details -->
@@ -34,8 +34,14 @@
             <div style="border: 1px solid #000; padding: 20px; margin: 10px 0;">
                 <h3>{{$post['title']}}</h3>
                 <p>{{$post['body']}}</p>
-                <h4>Posted by: {{$post['user_id']}}</h4>
+                <h4>Author Id: {{$post['user_id']}}</h4>
                 <h4>Posted by: {{$post->user->name}}</h4>
+                <p><a href="/edit-post/{{$post->id}}">Edit</a></p>
+                <form action="/delete-post/{{$post->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button>Delete</button>
+                </form>
             </div>
         @endforeach
     </div>

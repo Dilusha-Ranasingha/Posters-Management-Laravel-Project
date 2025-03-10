@@ -15,8 +15,14 @@
             <div style="border: 1px solid #000; padding: 20px; margin: 10px 0;">
                 <h3>{{$allposts['title']}}</h3>
                 <p>{{$allposts['body']}}</p>
-                <h4>Posted by: {{$allposts['user_id']}}</h4>
+                <h4>Author Id: {{$allposts['user_id']}}</h4>
                 <h4>Posted by: {{$allposts->user->name}}</h4>
+                <p><a href="/edit-post/{{$allposts->id}}">Edit</a></p>
+                <form action="/delete-post/{{$allposts->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button>Delete</button>
+                </form>
             </div>
         @endforeach
     </div>
