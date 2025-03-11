@@ -90,6 +90,21 @@ Ensure you have the following installed:
 - Click **"Logout"** on the homepage to end your session.  
 
 ---
- 
+
+## 🧰 Languages and Tools
+<p align="left">
+<img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="70" height="70" alt="Laravel Logo">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP" width="50" height="50">
+  <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" width="50" height="50">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="MySQL" width="50" height="50">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/composer/composer-original.svg" alt="Composer" width="50" height="50">
+</p>
+
+
+
+
+## 📧 Contact
+
+For any inquiries or feedback, feel free to reach out at dilushar10@gmail.com.
 
 
