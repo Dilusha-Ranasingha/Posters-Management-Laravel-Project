@@ -18,10 +18,17 @@
     <!--create post form-->
     <div style="text-align: center; border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto; margin-top: 100px;">
         <h2>Create a New Post</h2>
-        <form action="/create-post" method="POST">
+        <form action="/create-post" method="POST" enctype="multipart/form-data">
             @csrf
-            <input type="text" name="title" placeholder="Enter Post Title"><br>
-            <textarea name="body" placeholder="Enter Body Content"></textarea><br>
+                <input type="text" name="title" placeholder="Enter Post Title"><br>
+                <textarea name="body" placeholder="Enter Body Content"></textarea><br>
+                <input type="file" name="image"><br>
+                <select name="category_id" required>
+                    <option value="">Select Category</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select><br>
             <button>Create Post</button>
         </form>
     </div>
@@ -36,6 +43,10 @@
                 <p>{{$post['body']}}</p>
                 <h4>Author Id: {{$post['user_id']}}</h4>
                 <h4>Posted by: {{$post->user->name}}</h4>
+                @if($post->image)
+                <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image" style="width: 200px; height: 200px;">
+                @endif
+                <h4>Category: {{ $post->category ? $post->category->name : 'Uncategorized' }}</h4>
                 <p><a href="/edit-post/{{$post->id}}">Edit</a></p>
                 <form action="/delete-post/{{$post->id}}" method="POST">
                     @csrf

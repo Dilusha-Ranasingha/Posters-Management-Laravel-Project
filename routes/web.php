@@ -7,7 +7,8 @@ use App\Models\Post;
 
 Route::get('/', function () {
     $poster = Post::where('user_id', auth()->id())->get();     // Retrieve only posts created by the logged-in user
-    return view('home', ['poster' => $poster]);          // Pass the retrieved posts data to the 'home' view for display in the home.blade.php file by using the $posts variable
+    $categories = \App\Models\Category::all(); // Fetch all categories from the Category model
+    return view('home', ['poster' => $poster, 'categories' => $categories]);          // Pass the retrieved posts data to the 'home' view for display in the home.blade.php file by using the $posts variable
 });
 
 Route::get('/posts', function () {
@@ -22,10 +23,8 @@ Route::Post('/login', [UserController::class, 'login']);
 
 //posters related routes
 Route::post('/create-post', [PostController::class, 'createPost']);
-
 Route::get('/edit-post/{post}', [PostController::class, 'showEditPost']);
 Route::put('/edit-post/{post}', [PostController::class, 'updateEditPost']);
-
 Route::delete('/delete-post/{post}', [PostController::class, 'deletePost']);
 
 
