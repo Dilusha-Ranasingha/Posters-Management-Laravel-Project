@@ -1,14 +1,7 @@
-<p align="center">
-  <a href="https://laravel.com" target="_blank">
-    <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
-  </a>
-</p>
+# 🚀 Blog Post Laravel Project
 
----
-
-# 🚀 Laravel Blog Post Project
-
-![Laravel Blog Screenshot](screenshot.png) <!-- Replace with an actual screenshot URL if available -->
+<img width="1455" alt="Laravel-Blog-Post" src="https://github.com/user-attachments/assets/ac331df9-4830-476f-bd68-3a0f138281c8" />
+<!-- Replace with an actual screenshot URL if available -->
 
 A **modern, feature-rich** blog application built with **Laravel 11**, styled using **Tailwind CSS**, and designed with a **dark, cinematic theme**. This project enables users to register, log in, create, edit, and delete posts while categorizing them into **Health & Wellness, Science & Nature, Technology, Sports, and History & Culture**.
 
