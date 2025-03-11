@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    @auth 
+    
     <!-- Displaying all posts from the post table database -->
     <div style="text-align: center; border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto; margin-top: 100px;">
         <h2>All Posts</h2>
@@ -19,15 +19,7 @@
                 <h4>Posted by: {{$allposts->user->name}}</h4>
             </div>
         @endforeach
-    </div>
-
-
-
-
-    @else       
-
-
-    @endauth       
+    </div>     
 
     
 </body>
