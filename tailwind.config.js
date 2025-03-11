@@ -1,20 +1,12 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/**/*.blade.php',
-        './resources/**/*.js',
-        './resources/**/*.vue',
+      "./resources/**/*.blade.php", // Include all Blade files
+      "./resources/**/*.js",        // Include JS files (if any)
+      "./resources/**/*.vue",       // Include Vue files (if you use Vue, optional)
     ],
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
-        },
+      extend: {}, // You can customize colors, fonts, etc., here later
     },
     plugins: [],
-};
+  }
